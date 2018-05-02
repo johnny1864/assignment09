@@ -11,12 +11,18 @@
 		// WRITE YOUR CODE HERE
         $(document).ready(function(){
             $.get('team.xml', function(data){
-                var text = $(data).find('teammember').text()
+                var text = $(data).find('teammember').each(function(){
+                    //console.log($(this).find('name').text());
+                    $("#team").append(
+                        $(this).find("name").text() + "<br>" +
+                        $(this).find("title").text() + "<br>" +
+                        $(this).find("bio").text() + "<br><br>"
+                    )
+                });
                 
-                $('#team').html(text); 
             });
         });
-    </script>
+    </script
 </head>
 
 <body>
