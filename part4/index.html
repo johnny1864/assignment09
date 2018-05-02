@@ -25,7 +25,7 @@
                     console.log(data['teammembers']);
                     $.each(data['teammembers'], function(index, value){
                         console.log(index, value);
-                        $('#result').html(value.name);
+                        $('#result').append("<strong>" + value.name + '</strong><br>' + value.bio + '<br><br>');
                     });
                 }
             });

@@ -8,10 +8,16 @@
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script>
-        $(document).ready(function(){
-           console.log('ready');
-            $.getJSON('johnny.json', function(data){
-               console.log('json ready'); 
+        // WRITE YOUR CODE HERE
+        $(document).ready(function() {
+            "use strict";
+            $.getJSON("johnny.json", function(data) {
+                console.log(data['teammembers']);
+                $.each(data['teammembers'], function(index, value) {
+                    console.log(index, value);
+                    $('#result').append("<strong>" + value.name + '</strong><br>' + value.bio + '<br><br>');
+                });
+
             });
         });
     </script>
